@@ -13,16 +13,18 @@
         }
 
         :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a25;
-            --accent: #5865F2;
-            --accent-hover: #4752c4;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --border: #2a2a3a;
-            --gradient-1: linear-gradient(135deg, #5865F2 0%, #EB459E 100%);
-            --gradient-2: linear-gradient(135deg, #57F287 0%, #5865F2 100%);
+            --bg-primary: #050505;
+            --bg-secondary: #0a0a0a;
+            --bg-card: #111111;
+            --accent: #3a3a3a;
+            --accent-hover: #4a4a4a;
+            --accent-glow: #2a2a2a;
+            --text-primary: #e8e8e8;
+            --text-secondary: #787878;
+            --border: #1a1a1a;
+            --gradient-1: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            --gradient-2: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+            --glow-color: rgba(255, 255, 255, 0.03);
         }
 
         html {
@@ -37,7 +39,7 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
+        /* Enhanced Animated Blurry Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -55,9 +57,9 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 20% 80%, rgba(88, 101, 242, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(235, 69, 158, 0.12) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 40%, rgba(87, 242, 135, 0.08) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 80%, rgba(60, 60, 60, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(40, 40, 40, 0.12) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(50, 50, 50, 0.08) 0%, transparent 50%);
             animation: bgMove 20s ease-in-out infinite;
         }
 
@@ -68,7 +70,106 @@
             75% { transform: translate(3%, -2%) rotate(2deg); }
         }
 
-        /* Floating Particles */
+        /* Large Blur Orbs - Coal Theme */
+        .blur-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .blur-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.5;
+        }
+
+        .blur-orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(80, 80, 80, 0.4) 0%, transparent 70%);
+            top: -10%;
+            left: -10%;
+            animation: orbFloat1 25s ease-in-out infinite;
+        }
+
+        .blur-orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(50, 50, 50, 0.5) 0%, transparent 70%);
+            top: 50%;
+            right: -15%;
+            animation: orbFloat2 30s ease-in-out infinite;
+        }
+
+        .blur-orb-3 {
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(40, 40, 40, 0.4) 0%, transparent 70%);
+            bottom: -20%;
+            left: 20%;
+            animation: orbFloat3 35s ease-in-out infinite;
+        }
+
+        .blur-orb-4 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(70, 70, 70, 0.3) 0%, transparent 70%);
+            top: 30%;
+            left: 40%;
+            animation: orbFloat4 20s ease-in-out infinite;
+        }
+
+        .blur-orb-5 {
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(60, 60, 60, 0.35) 0%, transparent 70%);
+            top: 10%;
+            right: 10%;
+            animation: orbFloat5 28s ease-in-out infinite;
+        }
+
+        @keyframes orbFloat1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(80px, 50px) scale(1.1); }
+            50% { transform: translate(40px, 100px) scale(0.95); }
+            75% { transform: translate(-30px, 60px) scale(1.05); }
+        }
+
+        @keyframes orbFloat2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-60px, -40px) scale(1.15); }
+            50% { transform: translate(-100px, 30px) scale(0.9); }
+            75% { transform: translate(-40px, -70px) scale(1.1); }
+        }
+
+        @keyframes orbFloat3 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, -60px) scale(1.08); }
+            50% { transform: translate(-40px, -30px) scale(1.12); }
+            75% { transform: translate(70px, -90px) scale(0.95); }
+        }
+
+        @keyframes orbFloat4 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-60px, 80px) scale(1.2); }
+            66% { transform: translate(80px, -40px) scale(0.85); }
+        }
+
+        @keyframes orbFloat5 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            20% { transform: translate(-40px, 60px) scale(1.1); }
+            40% { transform: translate(-80px, 20px) scale(0.95); }
+            60% { transform: translate(-20px, -40px) scale(1.15); }
+            80% { transform: translate(40px, -20px) scale(1); }
+        }
+
+        /* Floating Particles - Coal Theme */
         .particles {
             position: fixed;
             top: 0;
@@ -83,128 +184,128 @@
         .particle {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.6;
+            opacity: 0.4;
             animation: floatParticle linear infinite;
         }
 
         .particle:nth-child(1) {
-            width: 6px;
-            height: 6px;
-            background: #5865F2;
+            width: 4px;
+            height: 4px;
+            background: #4a4a4a;
             left: 10%;
             animation-duration: 25s;
             animation-delay: 0s;
-            box-shadow: 0 0 20px #5865F2, 0 0 40px #5865F2;
+            box-shadow: 0 0 15px rgba(100, 100, 100, 0.3);
         }
 
         .particle:nth-child(2) {
-            width: 4px;
-            height: 4px;
-            background: #EB459E;
+            width: 3px;
+            height: 3px;
+            background: #5a5a5a;
             left: 20%;
             animation-duration: 20s;
             animation-delay: -5s;
-            box-shadow: 0 0 15px #EB459E, 0 0 30px #EB459E;
+            box-shadow: 0 0 10px rgba(120, 120, 120, 0.3);
         }
 
         .particle:nth-child(3) {
-            width: 8px;
-            height: 8px;
-            background: #57F287;
+            width: 5px;
+            height: 5px;
+            background: #3a3a3a;
             left: 35%;
             animation-duration: 28s;
             animation-delay: -10s;
-            box-shadow: 0 0 25px #57F287, 0 0 50px #57F287;
+            box-shadow: 0 0 20px rgba(80, 80, 80, 0.3);
         }
 
         .particle:nth-child(4) {
-            width: 5px;
-            height: 5px;
-            background: #5865F2;
+            width: 3px;
+            height: 3px;
+            background: #6a6a6a;
             left: 50%;
             animation-duration: 22s;
             animation-delay: -3s;
-            box-shadow: 0 0 18px #5865F2, 0 0 35px #5865F2;
+            box-shadow: 0 0 12px rgba(140, 140, 140, 0.3);
         }
 
         .particle:nth-child(5) {
-            width: 7px;
-            height: 7px;
-            background: #EB459E;
+            width: 4px;
+            height: 4px;
+            background: #4a4a4a;
             left: 65%;
             animation-duration: 26s;
             animation-delay: -8s;
-            box-shadow: 0 0 22px #EB459E, 0 0 45px #EB459E;
+            box-shadow: 0 0 18px rgba(100, 100, 100, 0.3);
         }
 
         .particle:nth-child(6) {
-            width: 4px;
-            height: 4px;
-            background: #57F287;
+            width: 3px;
+            height: 3px;
+            background: #5a5a5a;
             left: 75%;
             animation-duration: 18s;
             animation-delay: -2s;
-            box-shadow: 0 0 15px #57F287, 0 0 30px #57F287;
+            box-shadow: 0 0 10px rgba(120, 120, 120, 0.3);
         }
 
         .particle:nth-child(7) {
-            width: 6px;
-            height: 6px;
-            background: #5865F2;
+            width: 4px;
+            height: 4px;
+            background: #3a3a3a;
             left: 85%;
             animation-duration: 24s;
             animation-delay: -6s;
-            box-shadow: 0 0 20px #5865F2, 0 0 40px #5865F2;
+            box-shadow: 0 0 15px rgba(80, 80, 80, 0.3);
         }
 
         .particle:nth-child(8) {
-            width: 5px;
-            height: 5px;
-            background: #EB459E;
+            width: 3px;
+            height: 3px;
+            background: #6a6a6a;
             left: 5%;
             animation-duration: 21s;
             animation-delay: -12s;
-            box-shadow: 0 0 18px #EB459E, 0 0 35px #EB459E;
+            box-shadow: 0 0 12px rgba(140, 140, 140, 0.3);
         }
 
         .particle:nth-child(9) {
-            width: 8px;
-            height: 8px;
-            background: #57F287;
+            width: 5px;
+            height: 5px;
+            background: #4a4a4a;
             left: 45%;
             animation-duration: 30s;
             animation-delay: -15s;
-            box-shadow: 0 0 25px #57F287, 0 0 50px #57F287;
+            box-shadow: 0 0 20px rgba(100, 100, 100, 0.3);
         }
 
         .particle:nth-child(10) {
-            width: 4px;
-            height: 4px;
-            background: #5865F2;
+            width: 3px;
+            height: 3px;
+            background: #5a5a5a;
             left: 90%;
             animation-duration: 19s;
             animation-delay: -4s;
-            box-shadow: 0 0 15px #5865F2, 0 0 30px #5865F2;
+            box-shadow: 0 0 10px rgba(120, 120, 120, 0.3);
         }
 
         .particle:nth-child(11) {
-            width: 6px;
-            height: 6px;
-            background: #EB459E;
+            width: 4px;
+            height: 4px;
+            background: #3a3a3a;
             left: 25%;
             animation-duration: 27s;
             animation-delay: -9s;
-            box-shadow: 0 0 20px #EB459E, 0 0 40px #EB459E;
+            box-shadow: 0 0 15px rgba(80, 80, 80, 0.3);
         }
 
         .particle:nth-child(12) {
-            width: 5px;
-            height: 5px;
-            background: #57F287;
+            width: 3px;
+            height: 3px;
+            background: #6a6a6a;
             left: 55%;
             animation-duration: 23s;
             animation-delay: -7s;
-            box-shadow: 0 0 18px #57F287, 0 0 35px #57F287;
+            box-shadow: 0 0 12px rgba(140, 140, 140, 0.3);
         }
 
         @keyframes floatParticle {
@@ -213,10 +314,10 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.6;
+                opacity: 0.4;
             }
             90% {
-                opacity: 0.6;
+                opacity: 0.4;
             }
             100% {
                 transform: translateY(-100vh) rotate(720deg);
@@ -224,57 +325,20 @@
             }
         }
 
-        /* Glowing Orbs */
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            animation: orbFloat 15s ease-in-out infinite;
+        /* Noise Overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
 
-        .orb-1 {
-            width: 400px;
-            height: 400px;
-            background: rgba(88, 101, 242, 0.15);
-            top: 10%;
-            left: -10%;
-            animation-delay: 0s;
-        }
-
-        .orb-2 {
-            width: 300px;
-            height: 300px;
-            background: rgba(235, 69, 158, 0.12);
-            top: 60%;
-            right: -5%;
-            animation-delay: -5s;
-        }
-
-        .orb-3 {
-            width: 350px;
-            height: 350px;
-            background: rgba(87, 242, 135, 0.1);
-            bottom: -10%;
-            left: 30%;
-            animation-delay: -10s;
-        }
-
-        @keyframes orbFloat {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            25% {
-                transform: translate(30px, -30px) scale(1.1);
-            }
-            50% {
-                transform: translate(-20px, 20px) scale(0.95);
-            }
-            75% {
-                transform: translate(20px, 30px) scale(1.05);
-            }
-        }
-
-        /* Grid Pattern */
+        /* Subtle Grid Pattern */
         .grid-pattern {
             position: fixed;
             top: 0;
@@ -283,19 +347,9 @@
             height: 100%;
             z-index: -2;
             background-image:
-                linear-gradient(rgba(88, 101, 242, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(88, 101, 242, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
-        }
-
-        @keyframes gridMove {
-            0% {
-                transform: perspective(500px) rotateX(60deg) translateY(0);
-            }
-            100% {
-                transform: perspective(500px) rotateX(60deg) translateY(50px);
-            }
+                linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+            background-size: 80px 80px;
         }
 
         /* Navigation */
@@ -306,15 +360,16 @@
             right: 0;
             z-index: 1000;
             padding: 1rem 2rem;
-            background: rgba(10, 10, 15, 0.8);
+            background: rgba(5, 5, 5, 0.7);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             transition: all 0.3s ease;
         }
 
         nav.scrolled {
             padding: 0.75rem 2rem;
-            background: rgba(10, 10, 15, 0.95);
+            background: rgba(5, 5, 5, 0.9);
         }
 
         .nav-container {
@@ -328,11 +383,9 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
             letter-spacing: -0.5px;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -356,8 +409,8 @@
             bottom: -4px;
             left: 0;
             width: 0;
-            height: 2px;
-            background: var(--gradient-1);
+            height: 1px;
+            background: var(--text-primary);
             transition: width 0.3s ease;
         }
 
@@ -398,6 +451,8 @@
             max-width: 900px;
             text-align: center;
             animation: fadeInUp 1s ease;
+            position: relative;
+            z-index: 1;
         }
 
         @keyframes fadeInUp {
@@ -427,9 +482,10 @@
         .hero-badge .dot {
             width: 8px;
             height: 8px;
-            background: #57F287;
+            background: #4a4a4a;
             border-radius: 50%;
             animation: pulse 2s infinite;
+            box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
         }
 
         @keyframes pulse {
@@ -446,7 +502,7 @@
         }
 
         .hero h1 .highlight {
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, #888888 0%, #555555 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -482,14 +538,16 @@
         }
 
         .btn-primary {
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
             color: white;
-            box-shadow: 0 4px 20px rgba(88, 101, 242, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid #4a4a4a;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(88, 101, 242, 0.5);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #4a4a4a 0%, #3a3a3a 100%);
         }
 
         .btn-secondary {
@@ -500,7 +558,7 @@
 
         .btn-secondary:hover {
             background: var(--bg-secondary);
-            border-color: var(--accent);
+            border-color: #3a3a3a;
         }
 
         /* Scroll Indicator */
@@ -527,6 +585,8 @@
         /* Section Styles */
         section {
             padding: 6rem 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .section-header {
@@ -550,7 +610,9 @@
 
         /* About Section */
         .about {
-            background: var(--bg-secondary);
+            background: rgba(10, 10, 10, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .about-container {
@@ -571,7 +633,7 @@
             border-radius: 24px;
             overflow: hidden;
             aspect-ratio: 1;
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
             padding: 3px;
         }
 
@@ -584,6 +646,7 @@
             align-items: center;
             justify-content: center;
             font-size: 6rem;
+            overflow: hidden;
         }
 
         .floating-card {
@@ -640,7 +703,7 @@
         .stat-number {
             font-size: 2rem;
             font-weight: 700;
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, #888888 0%, #555555 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -671,8 +734,8 @@
 
         .project-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(88, 101, 242, 0.15);
+            border-color: #3a3a3a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .project-image {
@@ -690,8 +753,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: var(--gradient-1);
-            opacity: 0.1;
+            background: linear-gradient(135deg, rgba(60, 60, 60, 0.1) 0%, transparent 100%);
         }
 
         .project-content {
@@ -707,8 +769,8 @@
 
         .tag {
             padding: 0.25rem 0.75rem;
-            background: rgba(88, 101, 242, 0.1);
-            color: var(--accent);
+            background: rgba(100, 100, 100, 0.15);
+            color: #888888;
             border-radius: 50px;
             font-size: 0.75rem;
             font-weight: 500;
@@ -742,12 +804,14 @@
         }
 
         .project-link:hover {
-            color: var(--accent);
+            color: var(--text-primary);
         }
 
         /* Skills Section */
         .skills {
-            background: var(--bg-secondary);
+            background: rgba(10, 10, 10, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .skills-container {
@@ -770,14 +834,14 @@
         }
 
         .skill-card:hover {
-            border-color: var(--accent);
+            border-color: #3a3a3a;
             transform: translateY(-4px);
         }
 
         .skill-icon {
             width: 50px;
             height: 50px;
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -825,9 +889,9 @@
         }
 
         .contact-link:hover {
-            border-color: var(--accent);
+            border-color: #3a3a3a;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .contact-link svg {
@@ -840,6 +904,8 @@
             padding: 2rem;
             text-align: center;
             border-top: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
         }
 
         footer p {
@@ -848,7 +914,7 @@
         }
 
         footer .heart {
-            color: #EB459E;
+            color: #666666;
             animation: heartbeat 1.5s ease infinite;
         }
 
@@ -911,6 +977,11 @@
             section {
                 padding: 4rem 1.5rem;
             }
+
+            .blur-orb-1, .blur-orb-2, .blur-orb-3, .blur-orb-4, .blur-orb-5 {
+                width: 300px;
+                height: 300px;
+            }
         }
 
         /* Animations on scroll */
@@ -928,6 +999,35 @@
 </head>
 <body>
     <div class="bg-animation"></div>
+    <div class="grid-pattern"></div>
+
+    <!-- Blur Orbs Background -->
+    <div class="blur-container">
+        <div class="blur-orb blur-orb-1"></div>
+        <div class="blur-orb blur-orb-2"></div>
+        <div class="blur-orb blur-orb-3"></div>
+        <div class="blur-orb blur-orb-4"></div>
+        <div class="blur-orb blur-orb-5"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
 
     <!-- Navigation -->
     <nav>
@@ -987,16 +1087,17 @@
             <div class="about-image fade-in">
                 <div class="about-image-wrapper">
                     <div class="about-image-inner">
-                        <img src="av.png" alt="xnx animations" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px;">
+                        <div style="font-size: 4rem; color: #666666;">xnx</div>
+                        <div style="font-size: 2rem; color: #888888; margin-top: -1rem;">animations</div>
                     </div>
                 </div>
                 <div class="floating-card">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#5865F2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#666666">
                         <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
                     </svg>
                 </div>
                 <div class="floating-card">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#57F287">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#888888">
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                     </svg>
                 </div>
@@ -1039,7 +1140,7 @@
         <div class="projects-grid">
             <div class="project-card fade-in">
                 <div class="project-image">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="#5865F2">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="#666666">
                         <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
                     </svg>
                 </div>
@@ -1066,7 +1167,7 @@
 
             <div class="project-card fade-in">
                 <div class="project-image">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#EB459E" stroke-width="1.5">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="1.5">
                         <polygon points="23 7 16 12 23 17 23 7"/>
                         <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
                     </svg>
@@ -1092,7 +1193,7 @@
 
             <div class="project-card fade-in">
                 <div class="project-image">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#57F287" stroke-width="1.5">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#777777" stroke-width="1.5">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                         <polyline points="22,6 12,13 2,6"/>
                     </svg>
@@ -1208,7 +1309,7 @@
             </div>
             <div class="contact-links">
                 <a href="https://discord.gg/66m5YF7H" target="_blank" class="contact-link">
-                    <svg viewBox="0 0 24 24" fill="#5865F2">
+                    <svg viewBox="0 0 24 24" fill="#666666">
                         <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
                     </svg>
                     Join Discord
